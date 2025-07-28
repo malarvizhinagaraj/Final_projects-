@@ -1,0 +1,1 @@
+# Utility functions (encryption, emoji parsing, etc.)

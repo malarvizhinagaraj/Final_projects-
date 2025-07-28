@@ -1,0 +1,1 @@
+# Flask app entry point with SocketIO integration

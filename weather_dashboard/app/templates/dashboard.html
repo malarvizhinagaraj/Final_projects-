@@ -1,0 +1,21 @@
+<h2>Weather Dashboard for {{ location }}</h2>
+<p>Current Temp: {{ current.main.temp }} {{ "°C" if units == "metric" else "°F" }}</p>
+<p>Condition: {{ current.weather[0].description }}</p>
+
+{% if alerts %}
+<h3>Severe Weather Alerts:</h3>
+<ul>
+    {% for alert in alerts %}
+        <li>{{ alert }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h3>5-Day Forecast</h3>
+<ul>
+    {% for item in forecast.list[:5] %}
+        <li>{{ item.dt_txt }} - {{ item.main.temp }} {{ "°C" if units == "metric" else "°F" }} - {{ item.weather[0].description }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('main.index') }}">Search Another Location</a>
