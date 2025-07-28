@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Recent Posts</h2>
+{% for post in posts %}
+    <div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content | safe }}</p>
+        <small>By User {{ post.user_id }} on {{ post.date_posted }}</small>
+        <hr>
+    </div>
+{% endfor %}
+{% endblock %}
