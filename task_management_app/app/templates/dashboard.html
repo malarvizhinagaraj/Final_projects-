@@ -1,0 +1,7 @@
+<h2>Your Projects</h2>
+<ul>
+{% for project in projects %}
+    <li>{{ project.name }} - <a href="{{ url_for('main.new_task', project_id=project.id) }}">New Task</a></li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('main.new_project') }}">Create New Project</a>

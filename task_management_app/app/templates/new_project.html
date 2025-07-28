@@ -1,0 +1,7 @@
+<h2>New Project</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name() }}<br>
+    {{ form.description.label }} {{ form.description() }}<br>
+    {{ form.submit() }}
+</form>
